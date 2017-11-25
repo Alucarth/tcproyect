@@ -1,0 +1,2 @@
+Saludando a: af  
+probando	 el fputs

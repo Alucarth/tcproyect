@@ -1,5 +1,5 @@
 #include <stdio.h>
-main()
+int main(int argc, char const *argv[])
 {
 	int op; //opcion
 	FILE *fp;
@@ -16,11 +16,16 @@ main()
 		 switch (op)
 		 {
 		     case 1: 
-		     	  fp = fopen('/memoria.txt','w+');
-		     	  fprintf(fp, "Escribiendo el archivo de texto\n");
-		     	  fputs("probando desde el fputs\n",fp);
+		     	  
+		     	  fp = fopen("memoria.txt","w");
+		     	  char texto[2];
+		     	  
+		     	  printf("escriba nombre: " );
+		     	  scanf("%s",texto);
+		     	  printf("\n escribiendo: %s \n",texto );
+		     	  fprintf(fp, " %s  \n",texto);
+		     	  //fputs("probando	 el fputs\n",fp);
 		     	  fclose(fp);
-
 
 		          break;
 		     case 2: /*Call function here to do the required operation*/
@@ -33,5 +38,6 @@ main()
 
 	}while(op != 3);
 	printf("Ejecucion Termida XD ");
+	return 0;
 	
 }
