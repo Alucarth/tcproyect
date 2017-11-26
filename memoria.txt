@@ -1,2 +1,1 @@
-Saludando a: af  
-probando	 el fputs
+e1 d1 f2 

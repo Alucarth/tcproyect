@@ -1,4 +1,15 @@
 #include <stdio.h>
+#include <string.h>
+
+void escribir(FILE *fp,char direccion1[2], char direccion2[2] , char dato[2])
+{
+	printf("%s\n",direccion1 );
+	printf("%s\n",direccion2 );
+	printf("%s\n",dato );
+	fprintf(fp, "%s %s %s \n",direccion1,direccion2,dato);
+	
+}
+
 int main(int argc, char const *argv[])
 {
 	int op; //opcion
@@ -16,15 +27,42 @@ int main(int argc, char const *argv[])
 		 switch (op)
 		 {
 		     case 1: 
+		     	  fp = fopen("memoria.txt","w");	
+
+		     	  char d[2],linea[10];
+		     	  memset(linea, 0, 10);
+		     	  memset(d, 0, 2);
 		     	  
-		     	  fp = fopen("memoria.txt","w");
-		     	  char texto[2];
+		     	  //linea =0;
+		     	  printf("d1: \n");
+		     	  scanf("%s",&d);
+		     	  strcat(d," ");
+		     	  strcat(linea,d);
 		     	  
-		     	  printf("escriba nombre: " );
-		     	  scanf("%s",texto);
-		     	  printf("\n escribiendo: %s \n",texto );
-		     	  fprintf(fp, " %s  \n",texto);
-		     	  //fputs("probando	 el fputs\n",fp);
+		     	  printf("d2: \n");
+		     	  scanf("%s",&d);
+		     	  strcat(d," ");
+		     	  strcat(linea,d);
+		     	  
+		     	  printf("dato: \n");
+		     	  scanf("%s ",&d);
+		     	  strcat(d,"");
+		     	  strcat(linea,d);
+		     	  
+				  
+
+				  fprintf(fp,"%s \n",linea);
+		     	  // escribir(fp,d1,d2,dato);
+
+		     	  // printf("d1: \n");
+		     	  // scanf("%s",&d1);
+		     	  // printf("d2: \n");
+		     	  // scanf("%s",&d2);
+		     	  // printf("dato: \n");
+		     	  // scanf("%s",&dato);
+		     	  
+		     	  // escribir(fp,d1,d2,dato);
+
 		     	  fclose(fp);
 
 		          break;
